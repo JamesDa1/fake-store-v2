@@ -1,3 +1,14 @@
+A simple webstore that fetches product data from an API and displays the products using .map() on the Store Page.
+The data from the API is missing an amount/quantity value, so I use the spread operator and added the value to the object before mapping.
+I used useContext API instead of redux to manage the shopping cart. 
+
+Modules used: 
+useState, useEFfect, useContext, useReducer from "React"
+React-Icons: for + and - buttons
+React-router-dom for navigation
+Styled-components for Navbar links.
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
