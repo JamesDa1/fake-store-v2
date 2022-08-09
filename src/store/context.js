@@ -1,6 +1,5 @@
-import React, { useState, useEffect, useContext, useReducer } from "react"
+import React, { useEffect, useContext, useReducer } from "react"
 import reducer from "./reducer"
-const url = "https://fakestoreapi.com/products"
 const AppContext = React.createContext()
 
 const initialState = {
@@ -21,28 +20,29 @@ const AppProvider = ({ children }) => {
     dispatch({ type: "ADD_ITEM", payload: product })
   }
   // Needs ID to target the specified product
-  const remove = (id) => {
-    dispatch({ type: "REMOVE" })
+  const removeItem = (id) => {
+    dispatch({ type: "REMOVE", payload: id })
   }
 
   const increase = (id) => {
-    dispatch({ type: "INCREASE" })
+    dispatch({ type: "INCREASE", payload: id })
   }
   const decrease = (id) => {
-    dispatch({ type: "DECREASE" })
+    dispatch({ type: "DECREASE", payload: id })
   }
 
   // Fetch data
-  const fetchData = () => {
+  const retrieveCart = () => {
     // toggles loading while the data is being fetched
     dispatch({ type: "LOADING" })
     dispatch({ type: "DISPLAY_ITEMS", payload: state.cart })
-    console.log("fetchData is potential cause of error")
+    console.log("retrieveCart is potential cause of error")
   }
 
   // Runs on page load
+  //
   useEffect(() => {
-    fetchData()
+    retrieveCart()
   }, [])
 
   useEffect(() => {
@@ -55,7 +55,7 @@ const AppProvider = ({ children }) => {
       value={{
         ...state,
         clearCart,
-        remove,
+        removeItem,
         increase,
         decrease,
         addItem,

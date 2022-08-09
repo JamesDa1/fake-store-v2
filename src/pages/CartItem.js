@@ -2,16 +2,17 @@ import React from "react"
 import { HiPlusSm, HiMinus } from "react-icons/hi"
 
 import { useGlobalContext } from "../store/context"
-const CartItem = ({ id, img, title, price, amount }) => {
-  const { remove, increase, decrease, toggleAmount } = useGlobalContext()
+const CartItem = ({ id, image, title, price, amount }) => {
+  const { removeItem, increase, decrease, toggleAmount } = useGlobalContext()
   return (
     <article className="cart-item">
-      <img src={img} alt={title} />
+      {/* Add Alt */}
+      <img src={image} alt={title} />
       <div>
         <h4>{title}</h4>
         <h4 className="item-price">${price}</h4>
         {/* remove button */}
-        <button className="remove-btn" onClick={() => remove(id)}>
+        <button className="remove-btn" onClick={() => removeItem(id)}>
           remove
         </button>
       </div>

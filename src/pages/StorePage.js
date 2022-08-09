@@ -10,8 +10,6 @@ const StorePage = () => {
   const [data, setData] = useState()
   const [apiError, setApiError] = useState(false)
   // State change will trigger rerender
-  const [currentCart, setCurrentCart] = useState([])
-  const [currentPrice, setCurrentPrice] = useState(0)
 
   const getData = async () => {
     await axios

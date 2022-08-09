@@ -10,17 +10,25 @@ const reducer = (state, action) => {
   }
 
   if (action.type === "ADD_ITEM") {
-    let newCart = state.cart.forEach((cartItem) => {
+    // Boolean to check if item already exists
+    let duplicate = false
+    let newCart = state.cart.map((cartItem) => {
       if (cartItem.id === action.payload.id) {
-        console.log(action.payload)
-        return { ...action.payload, amount: action.payload.amount + 1 }
+        duplicate = true
+        return { ...cartItem, amount: cartItem.amount + 1 }
+      } else {
+        return cartItem
       }
     })
-    return {
-      ...state,
-      cart: [...state.cart, action.payload],
+
+    // appends to cart if boolean is false
+    if (!duplicate) {
+      newCart = [...newCart, action.payload]
     }
+
+    return { ...state, cart: newCart }
   }
+
   if (action.type === "INCREASE") {
     let tempCart = state.cart.map((cartItem) => {
       if (cartItem.id === action.payload) {
@@ -41,6 +49,7 @@ const reducer = (state, action) => {
       .filter((cartItem) => cartItem.amount !== 0)
     return { ...state, cart: tempCart }
   }
+
   if (action.type === "GET_TOTALS") {
     let { total, amount } = state.cart.reduce(
       (cartTotal, cartItem) => {
