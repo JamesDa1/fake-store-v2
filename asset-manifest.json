@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/fake-store-v2/static/css/main.f93de962.css",
+    "main.js": "/fake-store-v2/static/js/main.c3286ff0.js",
+    "static/js/787.5dcfa6ed.chunk.js": "/fake-store-v2/static/js/787.5dcfa6ed.chunk.js",
+    "index.html": "/fake-store-v2/index.html",
+    "main.f93de962.css.map": "/fake-store-v2/static/css/main.f93de962.css.map",
+    "main.c3286ff0.js.map": "/fake-store-v2/static/js/main.c3286ff0.js.map",
+    "787.5dcfa6ed.chunk.js.map": "/fake-store-v2/static/js/787.5dcfa6ed.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f93de962.css",
+    "static/js/main.c3286ff0.js"
+  ]
+}
