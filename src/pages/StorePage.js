@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import { useGlobalContext } from "../store/context"
+import { useGlobalContext } from "../contextAPI/context"
 import axios from "axios"
 
 // Link to the APi,
@@ -21,7 +21,6 @@ const StorePage = () => {
             return { ...product, amount: 1 }
           })
         )
-        console.log(data)
       })
       .catch(() => {
         setApiError(true)
@@ -41,9 +40,9 @@ const StorePage = () => {
           {data.map((product) => {
             const { id, title, image, description, price, rating } = product
             return (
-              <div key={id} className="card">
+              <div key={id} className="product">
                 <img src={image} alt={title} />
-                <h3>
+                <h3 className="title">
                   {title.length > 26 ? title.substring(0, 26) + "..." : title}
                 </h3>
                 <p>{description.substring(0, 132)}...</p>
@@ -51,12 +50,13 @@ const StorePage = () => {
                   {rating.rate} ({rating.count})
                 </p>
                 <button
+                  className="btn-purchase"
                   onClick={() => {
                     // Adds object to cart and updates sum
                     addItem(product)
                   }}
                 >
-                  {price} Credits
+                  ${price}
                 </button>
               </div>
             )

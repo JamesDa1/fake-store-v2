@@ -1,6 +1,6 @@
 import styled from "styled-components"
 import { NavLink } from "react-router-dom"
-import { useGlobalContext } from "../store/context"
+import { useGlobalContext } from "../contextAPI/context"
 
 const Navbar = () => {
   const { total, amount } = useGlobalContext()
@@ -11,10 +11,9 @@ const Navbar = () => {
         <StyledNavLink to="/">Store</StyledNavLink>
         <StyledNavLink to="/CartPage">ShoppingCart</StyledNavLink>
       </div>
-      <div className="amount-container"></div>
       <div className="cartInfo">
         <h4>
-          Cart: {amount} items | Price: {total} Credits
+          Cart: {amount} items | Price: ${total}
         </h4>
       </div>
     </nav>

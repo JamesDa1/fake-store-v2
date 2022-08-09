@@ -1,0 +1,258 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.App {
+  text-align: center;
+}
+
+/* NAVBAR */
+
+.myNav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #141f26;
+  color: white;
+}
+
+.myNav .siteTitle {
+  font-size: 3rem;
+  text-align: center;
+  text-decoration: underline;
+}
+
+.myNav .nav-links {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+.myNav .cartInfo {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+/* PAGES  */
+
+/* STORE PAGE  */
+
+.PageContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.pageTitle {
+  font-size: 3rem;
+  margin: 1rem;
+}
+
+/* PRODUCT productS  */
+
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.product {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 5px;
+  border: 2px solid black;
+  max-width: 400px;
+  max-height: 450px;
+  background-color: white;
+  color: black;
+}
+
+/* 2x buttons are misaligned likely cause: img */
+.product img {
+  padding-top: 0.5rem;
+  max-width: 80%;
+  max-height: 45%;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.product .title {
+  margin-bottom: 1rem;
+}
+
+/* Buy button  */
+.btn-purchase {
+  background: #62fbd7;
+  font-weight: bold;
+  border-radius: 6px;
+  width: 80%;
+  padding: 0.5rem 1rem;
+  margin: 0.5rem;
+  font-size: 1rem;
+}
+
+.btn-purchase:hover {
+  transform: scale(1, 1.2);
+  cursor: pointer;
+}
+
+/* CART PAGE */
+
+.shoppingCart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.empty-cart {
+  text-transform: lowercase;
+  color: #617d98;
+  margin-top: 1rem;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-inline: 4rem;
+  border: 2px solid black;
+  border-radius: 6px;
+  padding: 1rem 1.5rem;
+  margin: 0 auto;
+  width: 80%;
+}
+
+.cart-item img {
+  width: 15%;
+}
+
+.cart-item .item-title {
+  font-size: 2rem;
+}
+
+.cart-item .item-price {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+
+.cart-item .remove-btn {
+  color: red;
+  letter-spacing: 0.25rem;
+  cursor: pointer;
+  font-size: 1.5rem;
+  background: transparent;
+  margin-top: 0.375rem;
+  transition: all 0.3s linear;
+  border: 2px solid red;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  transition: all 0.3s ease-in-out;
+}
+
+.cart-item .remove-btn:hover {
+  background: lightcoral;
+  color: black;
+}
+.cart-item .changeQuantity {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cart-item .amount {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.cart-item .amount-btn {
+  width: 2rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 2rem;
+}
+@media screen and (max-width: 800px) {
+  .myNav .nav-links {
+    flex-direction: column;
+    margin: 1rem;
+    gap: 1rem;
+  }
+  .cart-item {
+    flex-direction: column;
+    width: 90%;
+  }
+
+  .cart-item img {
+    width: 25%;
+    height: 25%;
+  }
+
+  .cart-item .changeQuantity {
+    margin-top: 1rem;
+    flex-direction: row;
+    align-items: center;
+    gap: 2rem;
+  }
+}
+
+/* Footer  */
+
+.cart footer {
+  margin-top: 4rem;
+  text-align: center;
+  margin: 0 auto;
+  max-width: 75%;
+  font-size: 2rem;
+}
+
+.cart-total h4 {
+  text-transform: capitalize;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+.btn {
+  text-transform: uppercase;
+  background: #2680c0;
+  color: white;
+  padding: 0.375rem 0.75rem;
+  letter-spacing: 0.25rem;
+  display: inline-block;
+  font-weight: 700;
+  transition: all 0.3s linear;
+  font-size: 0.875rem;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+.btn:hover {
+  color: #2680c0;
+  background: hsl(205, 84%, 74%);
+}
+
+.clear-btn {
+  background: transparent;
+  padding: 0.5rem 1rem;
+  color: hsl(360, 67%, 44%);
+  border: 1px solid hsl(360, 67%, 44%);
+  margin-top: 2.25rem;
+  margin-bottom: 2.25rem;
+  border-radius: 0.25rem;
+}
+
+.clear-btn:hover {
+  background: hsl(360, 71%, 66%);
+  color: hsl(360, 67%, 44%);
+  border-color: hsl(360, 71%, 66%);
+}

@@ -21,7 +21,7 @@ const reducer = (state, action) => {
       }
     })
 
-    // appends to cart if boolean is false
+    // adds item to cart if boolean is false
     if (!duplicate) {
       newCart = [...newCart, action.payload]
     }
@@ -65,10 +65,12 @@ const reducer = (state, action) => {
         amount: 0,
       }
     )
+    // limits the total price to 2x decimals
     total = parseFloat(total.toFixed(2))
 
     return { ...state, total, amount }
   }
+  // Sets loading: true, while waiting for data
   if (action.type === "LOADING") {
     return { ...state, loading: true }
   }
